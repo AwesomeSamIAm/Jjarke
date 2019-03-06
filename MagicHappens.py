@@ -32,9 +32,19 @@
 # def compare_character():
 #     pass
 
+#################################################################################################################
 
 # Option 3 is to use the difflib library to find differences between two lines of text read from the html page
 from difflib import Differ
+from obtain_html import get_site_html
+
+
+# Set both text strings
+def get_html(url_1, url_2, *elements):
+    # text1 = "text"
+    # text2 = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, ea, exercitationem magni doloremque aspernatur iste earum commodi, quibusdam tempora nulla alias iusto eaque! Cumque eaque quibusdam adipisci dicta in neque."
+    get_site_html(url_1, url_2, elements)
+
 
 # Function that takes two strings, compares them, then returns the number of changes and specific changes
 def find_line_diff(str1, str2):
@@ -52,8 +62,19 @@ def find_line_diff(str1, str2):
     return len(result), result
 
 
-# Set both text strings
-text1 = "text"
-text2 = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, ea, exercitationem magni doloremque aspernatur iste earum commodi, quibusdam tempora nulla alias iusto eaque! Cumque eaque quibusdam adipisci dicta in neque."
-# Print the changes found between text1 and text2 returned by find_line_diff
-print(find_line_diff(text1, text2))
+def send_changes():
+    # Print the changes found between text1 and text2 returned by find_line_diff
+    print(find_line_diff(text1, text2))
+
+    list3, list1 = find_line_diff(text1, text2)
+
+    for x in list1:
+        if "+" in x:
+            print(x)
+        elif "-" in x:
+            print("-" + x)
+        else:
+            pass
+
+
+get_html()
