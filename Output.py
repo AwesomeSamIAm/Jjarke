@@ -9,10 +9,12 @@ auth_token  = "your_auth_token"
 
 client = Client(account_sid, auth_token)
 
+#minecraft
+
 message = client.messages.create(
     to="+############", 
     from_="+###########",
-    body="Testing testing one two three four five six ",minecraft, "!"  
+    # body="Testing testing one two three four five six ",minecraft, "!"  
 )
 
 print(message.sid)
