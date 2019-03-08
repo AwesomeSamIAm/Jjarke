@@ -2,19 +2,15 @@
 
 from twilio.rest import Client
 
-# Your Account SID from twilio.com/console
-account_sid = "ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-# Your Auth Token from twilio.com/console
-auth_token  = "your_auth_token"
-
-client = Client(account_sid, auth_token)
-
-#minecraft
+#minecraft = 7
 
 message = client.messages.create(
     to="+############", 
     from_="+###########",
     # body="Testing testing one two three four five six ",minecraft, "!"  
+    body="An update has occured between your two links, ", result, "." 
 )
 
 print(message.sid)
+
+#What variables do we need for the output section? find_line_diff? d? result? list1 or 3?
