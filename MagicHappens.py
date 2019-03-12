@@ -14,7 +14,7 @@
 
 
 # compare()
-
+#################################################################################################################
 
 # Option 2, uses a library to compare total changes, then if there are changes looks charicter by charicter
 # import filecmp
@@ -36,14 +36,13 @@
 
 # Option 3 is to use the difflib library to find differences between two lines of text read from the html page
 from difflib import Differ
-from obtain_html import get_site_html
+
+from .obtain_html import get_site_html
 
 
 # Set both text strings
-def get_html(url_1, url_2, *elements):
-    # text1 = "text"
-    # text2 = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, ea, exercitationem magni doloremque aspernatur iste earum commodi, quibusdam tempora nulla alias iusto eaque! Cumque eaque quibusdam adipisci dicta in neque."
-    get_site_html(url_1, url_2, elements)
+def get_html(url, *elements):
+    return get_site_html(url, elements)
 
 
 # Function that takes two strings, compares them, then returns the number of changes and specific changes
@@ -62,11 +61,13 @@ def find_line_diff(str1, str2):
     return len(result), result
 
 
-def send_changes():
+def send_changes(text1, text2):
     # Print the changes found between text1 and text2 returned by find_line_diff
     print(find_line_diff(text1, text2))
 
-    list3, list1 = find_line_diff(text1, text2)
+    # Creates two lists from the tuple returned by find_line_diff, list2 is the amound of differences,
+    # while list1 is the list of actual differences
+    list2, list1 = find_line_diff(text1, text2)
 
     for x in list1:
         if "+" in x:
@@ -77,4 +78,4 @@ def send_changes():
             pass
 
 
-get_html()
+print(get_html("kaimoritamcvey.me", "p", "h1", "h2", "h3"))
