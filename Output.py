@@ -8,7 +8,7 @@ message = client.messages.create(
     to="+############", 
     from_="+###########",
     # body="Testing testing one two three four five six ",minecraft, "!"  
-    body="An update has occured between your two links, ", result, "." #1600 character limit
+    body="This many characters have been changed, ", result, "These were the characters that were added, or removed", result, "." #1600 character limit
   
 )
 
