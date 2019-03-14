@@ -37,7 +37,7 @@
 # Option 3 is to use the difflib library to find differences between two lines of text read from the html page
 from difflib import Differ
 
-from .obtain_html import get_site_html
+# from .obtain_html import get_site_html
 
 
 # Set both text strings
@@ -68,6 +68,7 @@ def send_changes(text1, text2):
     # Creates two lists from the tuple returned by find_line_diff, list2 is the amound of differences,
     # while list1 is the list of actual differences
     list2, list1 = find_line_diff(text1, text2)
+    print(list2)
 
     for x in list1:
         if "+" in x:
@@ -78,4 +79,7 @@ def send_changes(text1, text2):
             pass
 
 
-print(get_html("kaimoritamcvey.me", "p", "h1", "h2", "h3"))
+# print(get_html("kaimoritamcvey.me", "p", "h1", "h2", "h3"))
+print(find_line_diff("abc", "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, ea,exer"))
+print("##########################################################")
+print(send_changes("abc", "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, ea,exer"))
