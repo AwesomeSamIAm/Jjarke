@@ -2,7 +2,7 @@
 
 from twilio.rest import Client
 Fpart = "This many characters have been changed, "
-Mpart = "Key: + is added, - is removed. These were the characters that were added, or removed"
+Mpart = ". Key: + is added, - is removed. These were the characters that were added, or removed "
 
 #list1 is each character added
 #list2 is number total
