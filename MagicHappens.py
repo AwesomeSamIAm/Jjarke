@@ -47,8 +47,3 @@ def list_diff(list1, list2):
         )
         print(*[item for item in list2 if item not in list1], sep="\n")
 
-
-a = get_html("http://127.0.0.1:5500/Jjarke/test_html/index1.html", "p")
-time.sleep(15)
-b = get_html("http://127.0.0.1:5500/Jjarke/test_html/index1.html", "p")
-list_diff(a, b)
