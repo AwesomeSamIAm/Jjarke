@@ -24,6 +24,26 @@ def get_html(url, *elements):
     return parsed_html
 
 
+# This is for testing with a local file
+def get_html_test(url, *elements):
+    def get_site_html():
+        with open(url, "r", encoding="ascii", errors="surrogateescape") as f:
+            req = f.read()
+        soup = BeautifulSoup(req, "html.parser")
+        return soup
+
+    def html_parser():
+        element_list = []
+        for x in elements:
+            # print(x)
+            element_list += html_soup.find_all(x)
+        return element_list
+
+    html_soup = get_site_html()
+    parsed_html = html_parser()
+    return parsed_html
+
+
 def list_diff(list1, list2):
     diff_list = list(set(list1).symmetric_difference(set(list2)))
     place_differ = []
@@ -66,13 +86,38 @@ def char_length_checker(
         return 0
 
 
-# This is for testing, will not make master
-list1 = ["abc", "123", "ddd", "bbb"]
-list2 = ["123", "abc", "aaa", "eee", "hans get ze luger"]
-# list2 = ["abc", "123", "bbb", "ddd"]
+# TODO add wait functionality, fix variable names to match input
 
-place_differ, removed_strings, added_strings = list_diff(list1, list2)
-if char_length_checker(place_differ, removed_strings, added_strings) == True:
-    print("TRUE")
-else:
-    print("FALSE")
+
+# # This is for testing, will not make master
+# list1 = ["abc", "123", "ddd", "bbb"]
+# list2 = ["123", "abc", "aaa", "eee", "hans get ze luger"]
+# # list2 = ["abc", "123", "bbb", "ddd"]
+
+# place_differ, removed_strings, added_strings = list_diff(list1, list2)
+# if char_length_checker(place_differ, removed_strings, added_strings) == True:
+#     print("TRUE")
+# else:
+#     print("FALSE")
+def main():
+    print(time.ctime())
+    list1 = get_html_test("test_html/index1.html", "p")
+    print(time.ctime())
+    time.sleep(10)
+    list2 = get_html_test("test_html/index2.html", "p")
+    print(time.ctime())
+
+    place_differ, removed_strings, added_strings = list_diff(list1, list2)
+    if char_length_checker(place_differ, removed_strings, added_strings) == True:
+        print("TRUE")
+    else:
+        print("FALSE")
+    print(time.ctime())
+    # print(list_diff(list1, list2))
+
+
+x = 0
+while True:
+    print(x)
+    main()
+    x += 1
