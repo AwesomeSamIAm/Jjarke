@@ -1,4 +1,3 @@
-from difflib import Differ
 from bs4 import BeautifulSoup
 import requests
 import time
@@ -44,19 +43,19 @@ def list_diff(list1, list2):
         added_strings = [item for item in list2 if item not in list1]
         removed_strings = [item for item in list1 if item not in list2]
 
-        # Print the resulting lists of changes
-        print(
-            "The lines in list1 that differ from files at the same space in list2, these can be assumed to be lines moved around"
-        )
-        print(*place_differ, sep="\n")
-        print(
-            "These list elements are diffrent from list1 compared to list2, including items moved around, added, or changed. These could be considerd to have been removed"
-        )
-        print(*removed_strings, sep="\n")
-        print(
-            "These list elements are diffrent from list2 compared to list1, including items moved around, added, or changed. These could be considerd to have been added"
-        )
-        print(*added_strings, sep="\n")
+        ## Print the resulting lists of changes
+        # print(
+        #     "The lines in list1 that differ from files at the same space in list2, these can be assumed to be lines moved around"
+        # )
+        # print(*place_differ, sep="\n")
+        # print(
+        #     "These list elements are diffrent from list1 compared to list2, including items moved around, added, or changed. These could be considerd to have been removed"
+        # )
+        # print(*removed_strings, sep="\n")
+        # print(
+        #     "These list elements are diffrent from list2 compared to list1, including items moved around, added, or changed. These could be considerd to have been added"
+        # )
+        # print(*added_strings, sep="\n")
 
         # Return the lists of changes
         return place_differ, removed_strings, added_strings
@@ -65,17 +64,15 @@ def list_diff(list1, list2):
 def char_length_checker(
     place_differ, removed_strings, added_strings, char_check_length=3
 ):
-    # if len(place_differ) + len(removed_strings) + len(added_strings) >= 3:
-    #     return 1
-    changed_charicters = 0
+    changed_characters = 0
     for x in range(len(place_differ)):
-        changed_charicters += len(place_differ[x])
+        changed_characters += len(place_differ[x])
     for x in range(len(removed_strings)):
-        changed_charicters += len(removed_strings[x])
+        changed_characters += len(removed_strings[x])
     for x in range(len(added_strings)):
-        changed_charicters += len(added_strings[x])
-    print(changed_charicters)
-    if changed_charicters >= char_check_length:
+        changed_characters += len(added_strings[x])
+    print(changed_characters)
+    if changed_characters >= char_check_length:
         return 1
     else:
         return 0
