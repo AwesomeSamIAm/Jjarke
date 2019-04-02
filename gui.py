@@ -4,7 +4,6 @@ from  appJar import gui
 app = gui()
 
 # window declarations
-allentries = ["ent1", "ent2"]
 app.addLabel("title", "Welcome to appJar")
 app.setLabelBg("title", "red")
 
