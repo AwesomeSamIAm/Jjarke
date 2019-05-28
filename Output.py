@@ -1,7 +1,5 @@
 #By Ethan Wentworth & Jacob H.
 
-#By Ethan Wentworth & Jacob H.
-
 import twilio
 from twilio.rest import Client
 Fpart = "This many characters have been changed, "
