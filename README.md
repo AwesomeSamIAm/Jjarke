@@ -1,6 +1,6 @@
 # Jjarke
 
-Web Scraper:
+## Web Scraper:
  This project is for people who want to use an easy way to get web data/- information from the world wide web and to see the changes after a certain time. The user has the possibilitiy to define the content he wants to get in order to only receive this part of the website.
  Before the use can receive the output he need to define the input. The input contains following variables:
 weburl: To get the content from this website.
@@ -14,3 +14,13 @@ After the input software process the data. It tries to connect to the web server
 
 On the next process step it connect to twillio server to send the message to the user.
 The user receives defined output with data about the changes, data and time.
+
+## This project should be run in a virtual enviroment with the following libraries installed:
+
+1. BeautifulSoup4
+2. Requests
+3. Twilio
+4. AppJar
+5. tkinter
+
+## The project is formatted using black
