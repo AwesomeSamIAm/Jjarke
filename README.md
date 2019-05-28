@@ -20,5 +20,7 @@ The user receives defined output with data about the changes, data and time.
 1. BeautifulSoup4
 2. Requests
 3. Twilio
+4. AppJar
+5. tkinter
 
 ## The project is formatted using black

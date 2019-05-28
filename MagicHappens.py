@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import requests
 import time
 
-
 # Set both text strings
 def get_html(url, *elements):
     def get_site_html():
@@ -116,8 +115,9 @@ def main():
     # print(list_diff(list1, list2))
 
 
-x = 0
-while True:
-    print(x)
-    main()
-    x += 1
+if __name__ == "__main__":
+    x = 0
+    while True:
+        print(x)
+        main()
+        x += 1
