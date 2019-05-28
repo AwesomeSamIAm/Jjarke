@@ -20,6 +20,8 @@ def main() :
     app.addEntry("twi_num", 5,1)
     app.addLabel("dest", "Destination Number: ", 6,0)
     app.addEntry("dest_num", 6,1)
+    app.addLabel("char", "Minimum Character Change: ", 7, 0)
+    app.addEntry("character_length", 7, 1)
     #submit buttton code(global variable calls, global variable assignments)
     def save() :
         variables = app.getAllEntries()
