@@ -21,6 +21,6 @@ The user receives defined output with data about the changes, data and time.
 2. Requests
 3. Twilio
 4. AppJar
-5. tkinter
+5. tkinter (may need special install on linux)
 
 ## The project is formatted using black
