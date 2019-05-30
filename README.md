@@ -15,7 +15,7 @@ After the input software process the data. It tries to connect to the web server
 On the next process step it connect to twillio server to send the message to the user.
 The user receives defined output with data about the changes, data and time.
 
-## This project should be run in a virtual enviroment with the following libraries installed:
+## This project should be run in a virtual enviroment with the following libraries installed: CHANGER HAS HAPPENED
 
 1. BeautifulSoup4
 2. Requests
