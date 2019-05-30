@@ -2,7 +2,7 @@
 
 ## Web Scraper:
  This project is for people who want to use an easy way to get web data/- information from the world wide web and to see the changes after a certain time. The user has the possibilitiy to define the content he wants to get in order to only receive this part of the website.
- Before the use can receive the output he need to define the input. The input contains following variables:
+ Before the use can receive the output he need to define the input. The input contains following variables: TEST1
 weburl: To get the content from this website.
 interv: The time interval - How many times it should update the content.
 account_sid: User information. So it is able to connect to the user.
