@@ -1,6 +1,8 @@
 from bs4 import BeautifulSoup
 import requests
 import time
+import Output
+
 
 # Set both text strings
 def get_html(url, *elements):
@@ -85,39 +87,49 @@ def char_length_checker(
         return 0
 
 
-# TODO add wait functionality, fix variable names to match input
+# TODO add robots.text check, error exceptions, clean up format
 
 
-# # This is for testing, will not make master
-# list1 = ["abc", "123", "ddd", "bbb"]
-# list2 = ["123", "abc", "aaa", "eee", "hans get ze luger"]
-# # list2 = ["abc", "123", "bbb", "ddd"]
-
-# place_differ, removed_strings, added_strings = list_diff(list1, list2)
-# if char_length_checker(place_differ, removed_strings, added_strings) == True:
-#     print("TRUE")
-# else:
-#     print("FALSE")
-def main():
-    print(time.ctime())
-    list1 = get_html_test("test_html/index1.html", "p")
-    print(time.ctime())
-    time.sleep(10)
-    list2 = get_html_test("test_html/index2.html", "p")
-    print(time.ctime())
+def main(variables):
+    # print(time.ctime())
+    list1 = get_html(variables["weburl"], "p")
+    # print(time.ctime())
+    time.sleep(int(variables["interv"]))
+    list2 = get_html(variables["weburl"], "p")
+    # print(time.ctime())
 
     place_differ, removed_strings, added_strings = list_diff(list1, list2)
     if char_length_checker(place_differ, removed_strings, added_strings) == True:
-        print("TRUE")
+        soup = BeautifulSoup(str(added_strings), "html.parser")
+        added_clean_strings = soup.get_text()
+        Output.main(added_clean_strings, place_differ, variables)
     else:
         print("FALSE")
     print(time.ctime())
     # print(list_diff(list1, list2))
 
 
-if __name__ == "__main__":
+def start_other(variables):
     x = 0
     while True:
         print(x)
-        main()
+        main(variables)
         x += 1
+
+
+if __name__ == "__main__":
+    test_variables = {
+        "weburl": "http://127.0.0.1:5500/Jjarke/test_html/index1.html",
+        "interv": "30",
+        "sid": "TEST_SID",
+        "authtok": "TEST_TOKEN",
+        "twinum": "TEST_TWIL_NUM",
+        "destnum": "TEST_DEST_NUM",
+        "character_length": "3",
+    }
+    x = 0
+    while True:
+        print(x)
+        main(test_variables)
+        x += 1
+
