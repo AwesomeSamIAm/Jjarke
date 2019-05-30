@@ -92,10 +92,10 @@ def char_length_checker(
 
 def main(variables):
     # print(time.ctime())
-    list1 = get_html(variables["weburl"], "p")
+    list1 = get_html(variables["weburl"], "p", "*")
     # print(time.ctime())
     time.sleep(int(variables["interv"]))
-    list2 = get_html(variables["weburl"], "p")
+    list2 = get_html(variables["weburl"], "p", "*")
     # print(time.ctime())
 
     place_differ, removed_strings, added_strings = list_diff(list1, list2)
