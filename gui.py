@@ -38,7 +38,6 @@ def main():
     app.addLabel("tag", "Tag(s): ", 8, 0)
     app.addEntry("tags", 8, 1)
     app.addTickOptionBox("Tag Search", ["<p>", "<h1>", "<h2>", "<h3>", "<h4>"], 9, 0,)
-    app.addButton("GET", get)
      
     # submit buttton code(global variable calls, global variable assignments)
     def save():
