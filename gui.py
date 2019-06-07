@@ -35,7 +35,8 @@ def main():
     app.addEntry("destnum", 6, 1)
     app.addLabel("char", "Minimum Character Change: ", 7, 0)
     app.addEntry("character_length", 7, 1)
-    app.addTickOptionBox("Tag Search", ["<p>", "<h1>", "<h2>", "<h3>", "<h4>", "<h5>", "<h6>", "<title>", "<body>"], 8, 0,)
+    app.addLabel("tag", "Tag(s): ", 8, 0)
+    app.addEntry("tags", 8, 1)
      
     # submit buttton code(global variable calls, global variable assignments)
     def save():
