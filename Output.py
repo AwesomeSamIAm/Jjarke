@@ -14,8 +14,8 @@ def main(list1, list2, input_dict):
     print(list1)
     str1 = list_to_string(list1)
     str2 = list_to_string(list2)
-    Fpart = "This many characters have been changed, "
-    Mpart = ". Key: + is added, - is removed. These were the characters that were added, or removed "
+    Fpart = "You searched for these tag(s): "
+    Mpart = "This is where the update occured: "
     # list1 is each character added
 
     # list2 is number total
