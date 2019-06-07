@@ -14,8 +14,8 @@ def main(list1, list2, input_dict):
     print(list1)
     str1 = list_to_string(list1)
     str2 = list_to_string(list2)
-    Fpart = "You searched for these tag(s): "
-    Mpart = "This is where the update occured: "
+    Fpart = "BEFORE UPDATE: "
+    Mpart = "AFTER UPDATE: "
     # list1 is each character added
 
     # list2 is number total
